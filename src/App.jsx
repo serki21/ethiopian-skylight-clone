@@ -1,4 +1,4 @@
-import React from 'react';
+import { Routes, Route } from "react-router-dom";
 import { Navbar } from './components/layout/Navbar';
 import { Hero } from './components/home/Hero';
 import { WelcomeSection } from './components/home/welcomeSection';
@@ -12,10 +12,19 @@ import {MapSection} from "./components/home/MapSection";
 import {SubscribtionSection} from "./components/home/SubscribtionSection";
 import { Footer } from './components/layout/Footer';
 
+
+import {NotPageFound} from "./Pages/NotPageFound"
+
 function App() {
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
-      <Navbar />
+    <Routes>
+
+       <Route
+        path="/" 
+        element={
+       
+         <div className="min-h-screen flex flex-col bg-gray-50">
+         <Navbar />
 
       <main className="flex-grow">
         <Hero />
@@ -30,11 +39,19 @@ function App() {
           <SightSeeingSection/>
           <MapSection/>
           <SubscribtionSection/>
-        </div>
+        
+      </div>
+      
       </main>
 
       <Footer />
     </div>
+        }
+        />
+        <Route
+         path="*"
+         element={<NotPageFound/>}/>
+         </Routes>
   );
 }
 

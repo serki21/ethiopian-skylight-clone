@@ -46,12 +46,12 @@ Guests: ${guests}`);
 
       {/* Hero Content */}
       <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center">
-        <h1 className="text-5xl md:text-6xl font-bold mb-6">
+        <h1 className="text-3xl sm:text-3xl font-bold mb-4">
           Experience True Luxury in{" "}
           <span className="text-yellow-400">Addis Ababa</span>
         </h1>
 
-        <p className="max-w-2xl text-lg text-gray-200">
+        <p className="max-w-2xl text-sm text-gray-200">
           Discover unmatched elegance at East Africa's largest hotel,
           seamlessly connected to Bole International Airport.
         </p>
