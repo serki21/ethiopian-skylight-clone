@@ -73,66 +73,81 @@ export const SightSeeingSection = () => {
         {/* =========================
             SIGHTSEEING GRID
         ========================== */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          className="grid grid-flow-col gap-6 overflow-x-auto
+                     snap-x snap-mandatory"
+          style={{
+            gridAutoColumns: "calc((100% - 3rem) / 3)",
+          }}
+        >
 
           {sights.map((sight) => (
             <div
               key={sight.id}
-              className="relative h-[350px] overflow-hidden shadow-md group"
+              className="snap-start"
             >
 
-              {/* IMAGE */}
-              <img
-                src={sight.image}
-                alt={sight.title}
-                className="w-full h-full object-cover
-                           group-hover:scale-105
-                           transition-transform
-                           duration-700"
-              />
+              {/* =========================
+                  IMAGE CARD
+              ========================== */}
+              <div className="relative h-[350px] overflow-hidden shadow-md group">
 
-              {/* DARK OVERLAY */}
-              <div
-                className="absolute inset-0
-                           bg-black/20
-                           group-hover:bg-black/30
-                           transition"
-              ></div>
+                {/* IMAGE */}
+                <img
+                  src={sight.image}
+                  alt={sight.title}
+                  className="w-full h-full object-cover
+                             group-hover:scale-105
+                             transition-transform
+                             duration-700"
+                />
 
-              {/* CONTENT */}
-              <div
-                className="absolute inset-0
-                           flex flex-col
-                           items-center
-                           justify-end
-                           pb-6"
-              >
-
-                {/* TITLE */}
-                <h3
-                  className="text-white
-                             text-2xl
-                             font-semibold
-                             text-center
-                             mb-4
-                             drop-shadow-lg"
-                >
-                  {sight.title}
-                </h3>
-
-                {/* READ MORE BUTTON */}
-                <button
-                  className="bg-[#b69a62]
-                             text-white
-                             px-10
-                             py-3
-                             text-sm
-                             tracking-wide
-                             hover:bg-[#9f844e]
+                {/* DARK OVERLAY */}
+                <div
+                  className="absolute inset-0
+                             bg-black/20
+                             group-hover:bg-black/30
                              transition"
+                ></div>
+
+                {/* =========================
+                    CONTENT
+                ========================== */}
+                <div
+                  className="absolute inset-0
+                             flex flex-col
+                             items-center
+                             justify-end
+                             pb-6"
                 >
-                  READ MORE
-                </button>
+
+                  {/* TITLE */}
+                  <h3
+                    className="text-white
+                               text-2xl
+                               font-semibold
+                               text-center
+                               mb-4
+                               drop-shadow-lg"
+                  >
+                    {sight.title}
+                  </h3>
+
+                  {/* READ MORE BUTTON */}
+                  <button
+                    className="bg-[#b69a62]
+                               text-white
+                               px-10
+                               py-3
+                               text-sm
+                               tracking-wide
+                               hover:bg-[#9f844e]
+                               transition"
+                  >
+                    READ MORE
+                  </button>
+
+                </div>
 
               </div>
 
